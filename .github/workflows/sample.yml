@@ -11,3 +11,18 @@ jobs:
     steps:
     - name: Run a one-line script
       run:  echo Hello, World!
+
+  pytest:
+    name: python job
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: x64
+      - name: Display python version
+        run: python -c "import sys; print(sys.version)"
+
