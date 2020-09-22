@@ -1,0 +1,23 @@
+name: sampleCI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  job1:
+    name: first job
+    runs-on: ubuntu-20.04
+    outputs:
+      output1: ${{ setps.step1.outputs.test }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run:  echo Hello, World!
+
+  job2:
+    name: seccond job
+    runs-on: ubuntu-20.04
+    needs: job1
+    steps:
+    - run: echo ${{needs.job1.outputs.output1}}
