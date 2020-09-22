@@ -9,8 +9,9 @@ jobs:
     name: first job
     runs-on: ubuntu-20.04
     outputs:
-      output1: ${{ setps.step1.outputs.test }}
+      output1: ${{ steps.step1.outputs.test }}
     steps:
+    - id: step1
     - uses: actions/checkout@v2
     - name: Run a one-line script
       run:  echo Hello, World!
