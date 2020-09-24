@@ -42,4 +42,4 @@ jobs:
           run: |
             docker-compose up -d
         - name: Run test
-          run: docker-compose exec python pytest
+          run: docker-compose exec -T python pytest
