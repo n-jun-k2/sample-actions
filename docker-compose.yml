@@ -1,0 +1,8 @@
+version: '3'
+services:
+    python:
+        build: .
+        image: ghcr.io/n-jun-k2/sample-actions/python:v1
+        volumes:
+            - ./project:/tmp/app
+        tty: True
